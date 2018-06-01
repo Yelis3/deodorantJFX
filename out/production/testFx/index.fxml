@@ -1,0 +1,15 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<GridPane fx:controller="DetectController"
+          stylesheets="/styles.css"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <TextArea id="detectEditor" GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="200.0" prefWidth="400.0" />
+    <TextArea id="refactorEditor" GridPane.columnIndex="1" GridPane.rowIndex="0" prefHeight="200.0" prefWidth="400.0" />
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="1" text="Detect" onAction="#detect"/>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="1" text="Refactor" onAction="#detect"/>
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="2" fx:id="detection"/>
+</GridPane>
