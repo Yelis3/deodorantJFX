@@ -1,2 +1,5 @@
-def myfun(a,b):
+def algo(a,b):
+	return a
+
+def algo2(a,x,y):
 	return a

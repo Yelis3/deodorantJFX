@@ -33,7 +33,7 @@ public class Detector {
         LinkedList<String> result = new LinkedList<String>();;
 
         switch (smell){
-            case "galleta":
+            case "unusedParameters":
                 //  Unused Parameters Smell
                 LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1 = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > >();
                 walker = new ParseTreeWalker();
@@ -55,17 +55,16 @@ public class Detector {
 //                new unusedParameterRefactor(datos1, datos2);
 
 //                unusedParameterRefactor.generateOutputCode("input.txt", "output.txt");
-                String str = "";
                 for(int i=0; i<datos1.size(); i++){
-                    str = ("In the function \'"+datos1.get(i).t1.t1+"\' there "+(datos1.get(i).t2.size()>=2?"are":"is")+" the next unused parameters list [");
+                    String str = ("In the function \'"+datos1.get(i).t1.t1+"\' there "+(datos1.get(i).t2.size()>=2?"are":"is")+" the next unused parameters list [");
                     for(couple<String, Integer> x : datos1.get(i).t2)
                         str += x.t1+", ";
                     str += ']';
+                    result.add(str);
                 }
-                result.add(str);
 
                 break;
-            case "perro":
+            case "duplicatedConditionalFragments":
 
                 //  Duplicate Conditional Fragments Smell
                 LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
@@ -79,7 +78,7 @@ public class Detector {
         //            for(LinkedList<couple<String, Integer>> y : x )
         //        }
                 break;
-            case "manzana":
+            case "longParameterList":
 
                 //  Long Parameter List Smell
                 LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();

@@ -22,8 +22,7 @@ public class IndexController {
 
         detectionInfo.setText("detector: " + smell);
         String[] text2 = text.split("\n");
-        detection.setText(text);
-        LinkedList<String> result = Detector.detect(text2, "galleta");
+        LinkedList<String> result = Detector.detect(text2, smell);
         System.out.println(result);
     }
 
