@@ -1,5 +1,6 @@
-def algo(a,b):
-	return a
-
-def algo2(a,x,y):
-	return a
+def a(x, y, z):
+	return x
+def b(w, x, y, z):
+	return z
+def c(x, y, z):
+	return y
