@@ -38,17 +38,12 @@ public class Detector {
                 LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1 = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > >();
                 walker = new ParseTreeWalker();
                 walker.walk(new unusedParameterDetector1(datos1), tree);
-//                for(couple<couple<String, Integer>, ArrayList<couple<String, Integer> > >  x : datos1)
-//                    System.out.println(x.toString());
 
                 LinkedList<Integer[]>[] datos2 = new LinkedList[datos1.size()];
                 for(int i=0; i< datos1.size(); i++)
                     datos2[i] = new LinkedList<Integer[]>();
                 unusedParameterDetector2<Object> loader = new unusedParameterDetector2<Object>(datos1, datos2);
                 loader.visit(tree);
-//                for(int i=0; i<datos2.length; i++)
-//                    for (Integer[] x : datos2[i])
-//                        System.out.println(Arrays.toString(x));
 
 
 
@@ -57,8 +52,9 @@ public class Detector {
 //                unusedParameterRefactor.generateOutputCode("input.txt", "output.txt");
                 for(int i=0; i<datos1.size(); i++){
                     String str = ("In the function \'"+datos1.get(i).t1.t1+"\' there "+(datos1.get(i).t2.size()>=2?"are":"is")+" the next unused parameters list [");
-                    for(couple<String, Integer> x : datos1.get(i).t2)
-                        str += x.t1+", ";
+                    str += datos1.get(i).t2.get(0);
+                    for(int j=1; j<datos1.get(i).t2.size(); j++)
+                        str += ", " + datos1.get(i).t2.get(i);
                     str += ']';
                     result.add(str);
                 }
@@ -74,9 +70,13 @@ public class Detector {
                 duplicateConditionalFragmentsDetector.calculate();
                 duplicateConditionalFragmentsDetector.print();
 
-        //        for(LinkedList<LinkedList<couple<String, Integer>> > x : datos3){
-        //            for(LinkedList<couple<String, Integer>> y : x )
-        //        }
+
+                for(couple<Integer, couple<Integer, LinkedList<Integer>>> x : datos3){
+                    String str
+//                    for(LinkedList<couple<String, Integer>> y : x )
+
+                }
+
                 break;
             case "longParameterList":
 
