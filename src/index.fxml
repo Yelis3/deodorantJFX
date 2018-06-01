@@ -13,6 +13,7 @@
           stylesheets="/styles.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="0" text="Unused Parameters" fx:id="smellTitle" alignment="BASELINE_CENTER" textAlignment="CENTER"/>
 
     <Button GridPane.columnIndex="0" GridPane.rowIndex="2" text="Prev Smell" onAction="#prev"/>
     <Button GridPane.columnIndex="3" GridPane.rowIndex="2" text="Next Smell" onAction="#next"/>
@@ -28,14 +29,16 @@
 
     <VBox prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="4">
         <children>
-            <Label GridPane.rowIndex="0" text="Unused Parameter in Method" styleClass="title" fx:id="smellTitle"/>
-            <Label GridPane.rowIndex="1" fx:id="detectionInfo" wrapText="true"/>
+            <Label GridPane.rowIndex="0" text="Problem: One or several parameters are not used in the body of a method." fx:id="smellDescription" wrapText="true"/>
+            <Label GridPane.rowIndex="2" text="" fx:id="detectionInfo" wrapText="true"/>
         </children>
     </VBox>
     <VBox prefWidth="300" GridPane.columnIndex="2" GridPane.rowIndex="4">
         <children>
-            <Label GridPane.rowIndex="0" text="Click Refactor to Start" styleClass="title" fx:id="solutionTitle"/>
-            <Label GridPane.rowIndex="1" fx:id="refactorInfo" wrapText="true"/>
+            <Label GridPane.rowIndex="0" text="Solution: Remove the unused parameter." fx:id="solutionDescription" wrapText="true"/>
+            <Label GridPane.rowIndex="0" text="Why refactor: A method contains only the parameters that it truly requires." fx:id="solutionWhy" wrapText="true"/>
+            <Label GridPane.rowIndex="0" text="When not to use: If the method is implemented in different ways in subclasses or in a superclass, and your parameter is used in those implementations, leave the parameter as-is." fx:id="solutionWhen" wrapText="true"/>
+            <Label GridPane.rowIndex="2" fx:id="refactorInfo" wrapText="true"/>
         </children>
     </VBox>
 </GridPane>

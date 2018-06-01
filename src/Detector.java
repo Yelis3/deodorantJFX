@@ -72,6 +72,7 @@ public class Detector {
 //                unusedParameterRefactor.generateOutputCode("input.txt", "output.txt");
                 break;
             case "duplicatedConditionalFragments":
+                System.out.println("entra");
 
                 //  Duplicate Conditional Fragments Smell
                 //LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> Datos3; = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();

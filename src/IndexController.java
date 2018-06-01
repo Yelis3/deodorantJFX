@@ -11,11 +11,19 @@ public class IndexController {
     public Label detectionInfo;
     public Label refactorInfo;
     public Label smellTitle;
+    public Label smellDescription;
+    public Label solutionDescription;
+    public Label solutionWhy;
+    public Label solutionWhen;
     public TextArea detectEditor;
     public TextArea refactorEditor;
     public static final String[] smells = {"unusedParameters", "duplicatedConditionalFragments", "longParameterList"};
     public int smellIndex = 0;
-    public static final String[] smellNames = {"Unused Parameter in Method", "Duplicated Conditional Fragments", "Long Parameter List"};
+    public static final String[] smellTitles = {"Unused Parameters", "Duplicate Conditional Fragments", "Long Parameter List"};
+    public static final String[] smellDescriptions = {"One or several parameters are not used in the body of a method.", "Identical code can be found in all branches of a conditional.", "More than three or four parameters for a method."};
+    public static final String[] solutionDescriptions = {"Remove the unused parameter.", "Move the code outside of the conditional.", "Check what values are passed to parameters."};
+    public static final String[] solutionWhyDescriptions = {"A method contains only the parameters that it truly requires.\n", "Duplicate code is found inside all branches of a conditional, often as the result of evolution of the code within the conditional branches. Team development can be a contributing factor to this.", "More readable, shorter code. Refactoring may reveal previously unnoticed duplicate code."};
+    public static final String[] solutionWhenDescriptions = {"If the method is implemented in different ways in subclasses or in a superclass, and your parameter is used in those implementations, leave the parameter as-is.", "It is recommended to use any time you see it doesn't causes troubles in your code.", "Do not get rid of parameters if doing so would cause unwanted dependency between classes."};
 
 
     public LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> > datos1 = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> >();
@@ -53,12 +61,21 @@ public class IndexController {
     public void prev(ActionEvent actionEvent) {
         if(smellIndex > 0)
             smellIndex --;
-        smellTitle.setText(smellNames[smellIndex]);
+        setTexts(actionEvent);
+
     }
 
     public void next(ActionEvent actionEvent) {
         if(smellIndex < smells.length-1)
             smellIndex ++;
-        smellTitle.setText(smellNames[smellIndex]);
+        setTexts(actionEvent);
+    }
+
+    public void setTexts(ActionEvent actionEvent) {
+        smellTitle.setText("Smell: " + smellTitles[smellIndex]);
+        smellDescription.setText("Problem: " + smellDescriptions[smellIndex]);
+        solutionDescription.setText("Solution: " + solutionDescriptions[smellIndex]);
+        solutionWhy.setText("Why refactor: " + solutionWhyDescriptions[smellIndex]);
+        solutionWhen.setText("When not to use: " + solutionWhenDescriptions[smellIndex]);
     }
 }

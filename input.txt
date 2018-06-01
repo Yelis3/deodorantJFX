@@ -1,6 +1,17 @@
-def a(x, y, z):
-	return x
-def b(w, x, y, z):
-	return z
-def c(x, y, z):
+def a(x, y, z):
+
+
+	return x
+
+
+def b(w, x, y, z):
+
+
+	return z
+
+
+def c(x, y, z):
+
+
 	return y
+
