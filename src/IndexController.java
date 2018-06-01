@@ -3,6 +3,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import javax.swing.*;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class IndexController {
     public Label detectionInfo;
@@ -14,11 +16,15 @@ public class IndexController {
     public int smellIndex = 0;
     public static final String[] smellNames = {"Unused Parameter in Method", "Duplicated Conditional Fragments", "Long Parameter List"};
 
-    public void detect(ActionEvent actionEvent) {
+    public void detect(ActionEvent actionEvent) throws Exception {
         String text = detectEditor.getText().replaceAll("\n", System.getProperty("line.separator"));
         String smell = smells[smellIndex];
 
         detectionInfo.setText("detector: " + smell);
+        String[] text2 = text.split("\n");
+        detection.setText(text);
+        LinkedList<String> result = Detector.detect(text2, "galleta");
+        System.out.println(result);
     }
 
     public void refactor(ActionEvent actionEvent) {
