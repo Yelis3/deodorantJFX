@@ -19,7 +19,7 @@ public class unusedParameterRefactor {
         this.datos2 = datos2;
     }
 
-    public static void generateOutputCode(String input, String output) throws IOException {
+    public static String generateOutputCode(String input) throws IOException {
         Path path = Paths.get(input);
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
 
@@ -56,57 +56,62 @@ public class unusedParameterRefactor {
             sb.append(next);
             lines.set(datos1.get(i).t1.t2-1,sb.toString());
         }
+        System.out.println("Todo bien hasta ac'a");
 
         //  Refactor function calls
-        for(int i=0; i<datos2.length; i++){
-            for(int j=0; j<datos2[i].size(); j++){
-                String line = lines.get(datos2[i].get(j)[0]-1);
-                StringBuilder sb = new StringBuilder();
-
-                int idx = datos2[i].get(j)[1];
-                sb.append(line.substring(0,idx));
-                line = line.substring(idx);
-
-                idx = line.indexOf('(');
-                sb.append(line.substring(0,idx+1));
-                line = line.substring(idx+1);
-
-                idx = line.indexOf(')');
-                String next = line.substring(idx);
-                line = line.substring(0, idx);
-
-                String[] params = line.split(",");
-                int[] positions = new int[datos1.get(i).t2.size()];
-                for(int k=0; k<positions.length; k++) {
-                    positions[k] = datos1.get(i).t2.get(k).t2.intValue();
-                }
-                Arrays.sort(positions);
-
-                for(int k=0, l=0; k<params.length; k++){
-                    if(k >= positions[l]) {
-                        if(k > positions[l])
-                            k--;
-                        l++;
-                        continue;
-                    }
-                    sb.append(params[k]);
-                    sb.append(",");
-                }
-                String data = sb.toString();
-                if(data.charAt(data.length()-1) == ',')
-                    sb.delete(data.length()-1, data.length());
-
-                sb.append(next);
-                lines.set(datos2[i].get(j)[0]-1,sb.toString());
-            }
-
-
-        }
+//        for(int i=0; i<datos2.length; i++){
+//            for(int j=0; j<datos2[i].size(); j++){
+//                String line = lines.get(datos2[i].get(j)[0]-1);
+//                StringBuilder sb = new StringBuilder();
+//
+//                int idx = datos2[i].get(j)[1];
+//                sb.append(line.substring(0,idx));
+//                line = line.substring(idx);
+//
+//                idx = line.indexOf('(');
+//                sb.append(line.substring(0,idx+1));
+//                line = line.substring(idx+1);
+//
+//                idx = line.indexOf(')');
+//                String next = line.substring(idx);
+//                line = line.substring(0, idx);
+//
+//                String[] params = line.split(",");
+//                int[] positions = new int[datos1.get(i).t2.size()];
+//                for(int k=0; k<positions.length; k++) {
+//                    positions[k] = datos1.get(i).t2.get(k).t2.intValue();
+//                }
+//                Arrays.sort(positions);
+//
+//                for(int k=0, l=0; k<params.length; k++){
+//                    if(k >= positions[l]) {
+//                        if(k > positions[l])
+//                            k--;
+//                        l++;
+//                        continue;
+//                    }
+//                    sb.append(params[k]);
+//                    sb.append(",");
+//                }
+//                String data = sb.toString();
+//                if(data.charAt(data.length()-1) == ',')
+//                    sb.delete(data.length()-1, data.length());
+//
+//                sb.append(next);
+//                lines.set(datos2[i].get(j)[0]-1,sb.toString());
+//            }
+//
+//
+//        }
 
         //lines.set(lineNumber - 1, data);
-        if(output != null)
-            path = Paths.get(output);
-        Files.write(path, lines, StandardCharsets.UTF_8);
+        StringBuilder sb = new StringBuilder();
+        for(String x : lines)
+            sb.append(x);
+        System.out.println(sb.toString());
+        return sb.toString();
+
+//        Files.write(path, lines, StandardCharsets.UTF_8);
     }
 
 }

@@ -13,12 +13,14 @@
           stylesheets="/styles.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 
+
     <Button GridPane.columnIndex="0" GridPane.rowIndex="2" text="Prev Smell" onAction="#prev"/>
     <Button GridPane.columnIndex="3" GridPane.rowIndex="2" text="Next Smell" onAction="#next"/>
 
-    <Label text="Original Code" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Original Code" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="BASELINE_CENTER"/>
+    <Label text="Refactored Code" GridPane.columnIndex="2" GridPane.rowIndex="1" alignment="BASELINE_CENTER"/>
+
     <TextArea fx:id="detectEditor" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
-    <Label text="Refactored Code" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
     <TextArea fx:id="refactorEditor" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="300.0" prefWidth="400.0" />
 
     <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Detect" onAction="#detect"/>
@@ -26,13 +28,13 @@
 
     <VBox prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="4">
         <children>
-            <Label GridPane.rowIndex="0" text="Click Next to Start" fx:id="smellTitle"/>
+            <Label GridPane.rowIndex="0" text="Unused Parameter in Method" styleClass="title" fx:id="smellTitle"/>
             <Label GridPane.rowIndex="1" fx:id="detectionInfo" wrapText="true"/>
         </children>
     </VBox>
     <VBox prefWidth="300" GridPane.columnIndex="2" GridPane.rowIndex="4">
         <children>
-            <Label GridPane.rowIndex="0" text="Click Next to Start" fx:id="solutionTitle"/>
+            <Label GridPane.rowIndex="0" text="Click Refactor to Start" styleClass="title" fx:id="solutionTitle"/>
             <Label GridPane.rowIndex="1" fx:id="refactorInfo" wrapText="true"/>
         </children>
     </VBox>

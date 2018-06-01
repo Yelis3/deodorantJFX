@@ -1,16 +1,6 @@
-def algo(a,b,c,d):
-	return b
-If True:
-	print(“a”)
-	print(“a”)
-	print(“b”)
-elif False:
-	print(“a”)
-	print(“a”)
-	print(“a”)
-	print(“a”)
-	print(“a”)
-else True:
-	print(“a”)
-	print(“a”)
-	print(“a”)
+def a(x, y, z):
+	return x
+def b(w, x, y, z):
+	return z
+def c(x, y, z):
+	return y

@@ -1,6 +1,33 @@
-.root {
-    -fx-background-color: gold;
+.button {
+    -fx-cursor: pointer;
+    -fx-display: inline-block;
+    -fx-min-height: 1em;
+    -fx-outline: 0;
+    -fx-border: none;
+    -fx-vertical-align: baseline;
+    -fx-background-color: #2185d0;
+    -fx-color: rgba(0,0,0,.6);
+    -fx-font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    -fx-margin: 0 .25em 0 0;
+    -fx-padding: .78571429em 1.5em .78571429em;
+    -fx-text-transform: none;
+    -fx-text-shadow: none;
+    -fx-font-weight: 700;
+    -fx-line-height: 1em;
+    -fx-font-style: normal;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-border-radius: 2px;
 }
+
+.title {
+    -fx-color: pink;
+}
+
+.root {
+    -fx-background-color: #eff0f1;
+}
+
 .label {
     -fx-font-size: 20;
 }
