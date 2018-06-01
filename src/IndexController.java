@@ -1,7 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
-public class DetectController {
+public class IndexController {
     public Label detection;
 
     public void detect(ActionEvent actionEvent) {
