@@ -3,20 +3,24 @@ def a(x, y, z):
 def b(w, x, y, z):
 	return z
 def c(x, y, z):
-	return y
-
-
-	return x
-
-
-def b(w, x, y, z):
-
-
-	return z
-
-
-def c(x, y, z):
-
-
 	return y
 
+
+if True:
+	print("")
+	print("")
+	print("")
+	print("a")
+elif False:
+	print("")
+	print("")
+	print("")
+	print("")
+else:
+	print("")
+	print("")
+	print("")
+	print("")
+
+def method(a, b, c, d, e, f, g, h, i):
+	return a

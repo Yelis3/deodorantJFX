@@ -24,7 +24,7 @@
     <TextArea fx:id="detectEditor" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
     <TextArea fx:id="refactorEditor" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="300.0" prefWidth="400.0" />
 
-    <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Detect" onAction="#detect"/>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="nkajnsakj" onAction="#detect"/>
     <Button GridPane.columnIndex="2" GridPane.rowIndex="3" text="Refactor" onAction="#refactor"/>
 
     <VBox prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="4">

@@ -74,5 +74,6 @@ public class IndexController {
         solutionDescription.setText("Solution: " + solutionDescriptions[smellIndex]);
         solutionWhy.setText("Why refactor: " + solutionWhyDescriptions[smellIndex]);
         solutionWhen.setText("When not to use: " + solutionWhenDescriptions[smellIndex]);
+        detectionInfo.setText("");
     }
 }
