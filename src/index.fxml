@@ -11,20 +11,20 @@
           stylesheets="/styles.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 
-    <Button GridPane.columnIndex="0" GridPane.rowIndex="0" text="Prev Smell" onAction="#prev"/>
-    <Button GridPane.columnIndex="1" GridPane.rowIndex="0" text="Next Smell" onAction="#next"/>
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="2" text="Prev Smell" onAction="#prev"/>
+    <Button GridPane.columnIndex="3" GridPane.rowIndex="2" text="Next Smell" onAction="#next"/>
 
-    <Label text="Original Code" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextArea fx:id="detectEditor" GridPane.columnIndex="0" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
-    <Label text="Refactored Code" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <TextArea fx:id="refactorEditor" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
+    <Label text="Original Code" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextArea fx:id="detectEditor" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
+    <Label text="Refactored Code" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <TextArea fx:id="refactorEditor" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
 
-    <Button GridPane.columnIndex="0" GridPane.rowIndex="3" text="Detect" onAction="#detect"/>
-    <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Refactor" onAction="#refactor"/>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Detect" onAction="#detect"/>
+    <Button GridPane.columnIndex="2" GridPane.rowIndex="3" text="Refactor" onAction="#refactor"/>
 
 
-    <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="Click Next to Start" fx:id="smellTitle"/>
-    <Label GridPane.columnIndex="0" GridPane.rowIndex="5" fx:id="detectionInfo"/>
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="4" text="Click Next to Start" fx:id="solutionTitle"/>
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="refactorInfo"/>
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="4" text="Click Next to Start" fx:id="smellTitle"/>
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="detectionInfo"/>
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="4" text="Click Next to Start" fx:id="solutionTitle"/>
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="refactorInfo"/>
 </GridPane>

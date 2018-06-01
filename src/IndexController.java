@@ -12,11 +12,13 @@ public class IndexController {
     public TextArea refactorEditor;
     public static final String[] smells = {"unusedParameters", "duplicatedConditionalFragments", "longParameterList"};
     public int smellIndex = 0;
-    public static final String[] smellNames = {"Unused Parameter in Methon", "Duplicated Conditional Fragments", "Long Parameter List"};
+    public static final String[] smellNames = {"Unused Parameter in Method", "Duplicated Conditional Fragments", "Long Parameter List"};
 
     public void detect(ActionEvent actionEvent) {
         String text = detectEditor.getText().replaceAll("\n", System.getProperty("line.separator"));
-        detectionInfo.setText("detector: " + text);
+        String smell = smells[smellIndex];
+
+        detectionInfo.setText("detector: " + smell);
     }
 
     public void refactor(ActionEvent actionEvent) {
