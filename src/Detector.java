@@ -46,10 +46,10 @@ public class Detector {
 
 
                 for(int i=0; i<datos1.size(); i++){
-                    String str = ("In the function \'"+datos1.get(i).t1.t1+"\' there "+(datos1.get(i).t2.size()>=2?"are":"is")+" the next unused parameters list [");
-                    str += datos1.get(i).t2.get(0);
-                    for(int j=0; j<datos1.get(i).t2.size(); j++)
-                        str += ", "+datos1.get(i).t2.get(j);
+                    String str = ("In the function \'"+datos1.get(i).t1.t1+"\' at de line "+datos1.get(i).t1.t2+" there "+(datos1.get(i).t2.size()>=2?"are":"is")+" the next unused parameters list [");
+                    str += datos1.get(i).t2.get(0).t1;
+                    for(int j=1; j<datos1.get(i).t2.size(); j++)
+                        str += ", "+datos1.get(i).t2.get(j).t1;
                     str += ']';
                     result.add(str);
                 }
