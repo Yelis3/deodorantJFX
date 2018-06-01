@@ -3,6 +3,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -16,13 +17,20 @@ public class IndexController {
     public int smellIndex = 0;
     public static final String[] smellNames = {"Unused Parameter in Method", "Duplicated Conditional Fragments", "Long Parameter List"};
 
+
+    public LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> > datos1;// = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> >();
+    public LinkedList<Integer[]>[] datos2;// = new LinkedList<Integer[]>[]()
+    public LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3;// = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+    public LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4;// = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+    public LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5;// = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
+
     public void detect(ActionEvent actionEvent) throws Exception {
         String text = detectEditor.getText().replaceAll("\n", System.getProperty("line.separator"));
         String[] code = text.split("\n");
         String smell = smells[smellIndex];
         String info = "";
 
-        LinkedList<String> result = Detector.detect(code, smell);
+        LinkedList<String> result = Detector.detect(code, smell, datos1, datos2, datos3, datos4, datos5);
 
         System.out.println(result);
         for (int i=0; i < result.size(); i++) {

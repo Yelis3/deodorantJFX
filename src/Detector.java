@@ -14,9 +14,18 @@ import java.util.LinkedList;
 
 public class Detector {
 
-    public static LinkedList<String >detect(String [] args, String smell) throws Exception{
+    public static LinkedList<String >detect(String [] args, String smell,
+                                            LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1,
+                                            LinkedList<Integer[]>[] datos2,
+                                            LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3,
+                                            LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4,
+                                            LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5) throws Exception{
 
-//        int smellId;
+        datos1 = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> >();
+        datos3 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+        datos4 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+        datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
+        //        int smellId;
 
         System.out.println(Arrays.toString(args));
         String input = "input.txt";
@@ -35,11 +44,10 @@ public class Detector {
         switch (smell){
             case "unusedParameters":
                 //  Unused Parameters Smell
-                LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1 = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > >();
+
                 walker = new ParseTreeWalker();
                 walker.walk(new unusedParameterDetector1(datos1), tree);
-
-                LinkedList<Integer[]>[] datos2 = new LinkedList[datos1.size()];
+                datos2 = new LinkedList[datos1.size()];
                 for(int i=0; i< datos1.size(); i++)
                     datos2[i] = new LinkedList<Integer[]>();
                 unusedParameterDetector2<Object> loader = new unusedParameterDetector2<Object>(datos1, datos2);
@@ -60,8 +68,8 @@ public class Detector {
             case "duplicatedConditionalFragments":
 
                 //  Duplicate Conditional Fragments Smell
-                LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
-                LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+                //LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3; = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+                //LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4; = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
                 walker = new ParseTreeWalker();
                 walker.walk(new duplicateConditionalFragmentsDetector("input.txt" , datos3, datos4), tree);
                 duplicateConditionalFragmentsDetector.calculate();
@@ -81,7 +89,7 @@ public class Detector {
             case "longParameterList":
 
                 //  Long Parameter List Smell
-                LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
+                //LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
                 int limit = 5;
 
                 longParameterListDetector<Object> loader2 = new longParameterListDetector<Object>(datos5, limit);
