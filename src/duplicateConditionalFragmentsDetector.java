@@ -141,7 +141,8 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
                 System.out.println("equalLines"+equalLines);
                 LinkedList<Integer> arrayll = new LinkedList<Integer>();
                 for (LinkedList<couple<String, Integer>> y : x.t2) {
-                    arrayll.add(y.get(y.size() - equalLines - 1).t2+1);
+                    if(equalLines != y.size())
+                        arrayll.add(y.get(y.size() - equalLines - 1).t2+1);
                 }
                 datos3.add(new couple<Integer, couple<Integer, LinkedList<Integer>>>(x.t1, new couple<Integer, LinkedList<Integer>>(equalLines, arrayll)));
 //                System.out.println((new couple<Integer, couple<Integer, LinkedList<Integer>>>(x.t1, new couple<Integer, LinkedList<Integer>>(equalLines, arrayll))));
