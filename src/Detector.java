@@ -109,7 +109,7 @@ public class Detector {
 
                 result = new LinkedList<String>();
                 for (couple<couple<String, Integer>, LinkedList<String>> x : datos5)
-                    result.add("Demasiados parametros en la función "+x.t1.t1+" de la linea "+x.t1.t2+" estos son: "+x.t2);
+                    result.add("Too many parameters in the method '"+x.t1.t1+"' in the line "+x.t1.t2+", these are: "+x.t2);
                 break;
             default:
                 result.add("Smell no reconocible");
