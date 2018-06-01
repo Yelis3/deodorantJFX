@@ -1,6 +1,2 @@
-def a(x, y, z):
-	return x
-def b(w, x, y, z):
-	return z
-def c(x, y, z):
-	return y
+def method(a, b, c, d, e, f, g, h, i):
+	return a

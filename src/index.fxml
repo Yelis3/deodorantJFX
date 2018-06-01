@@ -1,9 +1,14 @@
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.VBox?>
 <GridPane fx:controller="IndexController"
           stylesheets="/styles.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
@@ -14,14 +19,21 @@
     <Label text="Original Code" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
     <TextArea fx:id="detectEditor" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
     <Label text="Refactored Code" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-    <TextArea fx:id="refactorEditor" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="200.0" prefWidth="400.0" />
+    <TextArea fx:id="refactorEditor" GridPane.columnIndex="2" GridPane.rowIndex="2" prefHeight="300.0" prefWidth="400.0" />
 
     <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Detect" onAction="#detect"/>
     <Button GridPane.columnIndex="2" GridPane.rowIndex="3" text="Refactor" onAction="#refactor"/>
 
-
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="4" text="Click Next to Start" fx:id="smellTitle"/>
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="detectionInfo"/>
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="4" text="Click Next to Start" fx:id="solutionTitle"/>
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="5" fx:id="refactorInfo"/>
+    <VBox prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <children>
+            <Label GridPane.rowIndex="0" text="Click Next to Start" fx:id="smellTitle"/>
+            <Label GridPane.rowIndex="1" fx:id="detectionInfo" wrapText="true"/>
+        </children>
+    </VBox>
+    <VBox prefWidth="300" GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <children>
+            <Label GridPane.rowIndex="0" text="Click Next to Start" fx:id="solutionTitle"/>
+            <Label GridPane.rowIndex="1" fx:id="refactorInfo" wrapText="true"/>
+        </children>
+    </VBox>
 </GridPane>

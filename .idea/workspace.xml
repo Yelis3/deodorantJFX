@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/testFx/Detector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/testFx/Detector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/testFx/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/testFx/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/testFx/index.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/testFx/index.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -63,10 +69,13 @@
       <file leaf-file-name="Detector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Detector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+            <state relative-caret-position="538">
+              <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1859#1867#0" expanded="true" />
+                <element signature="e#2802#2857#0" expanded="true" />
+                <element signature="e#2966#3021#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +84,20 @@
       <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="1">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="duplicateConditionalFragmentsDetector.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/duplicateConditionalFragmentsDetector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="40" lean-forward="true" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="342">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -176,11 +197,11 @@
         <option value="$PROJECT_DIR$/src/codeEditor.java" />
         <option value="$PROJECT_DIR$/src/CodeEditorExample.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/IndexController.java" />
         <option value="$PROJECT_DIR$/src/duplicateConditionalFragmentsDetector.java" />
         <option value="$PROJECT_DIR$/src/Detector.java" />
         <option value="$PROJECT_DIR$/src/Detector.java" />
         <option value="$PROJECT_DIR$/src/index.fxml" />
+        <option value="$PROJECT_DIR$/src/IndexController.java" />
       </list>
     </option>
   </component>
@@ -378,7 +399,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14028000" />
+    <option name="totallyTimeSpent" value="14891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -395,7 +416,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3419244" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29896906" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -515,6 +536,9 @@
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1859#1867#0" expanded="true" />
+            <element signature="e#2802#2857#0" expanded="true" />
+            <element signature="e#2966#3021#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -536,6 +560,9 @@
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1859#1867#0" expanded="true" />
+            <element signature="e#2802#2857#0" expanded="true" />
+            <element signature="e#2966#3021#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,14 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="40" lean-forward="true" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -740,6 +759,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Detector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1859#1867#0" expanded="true" />
+            <element signature="e#2802#2857#0" expanded="true" />
+            <element signature="e#2966#3021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -750,30 +790,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/duplicateConditionalFragmentsDetector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="1">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Detector.java">
+    <entry file="file://$PROJECT_DIR$/src/duplicateConditionalFragmentsDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+        <state relative-caret-position="51">
+          <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

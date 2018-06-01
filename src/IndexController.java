@@ -18,11 +18,17 @@ public class IndexController {
 
     public void detect(ActionEvent actionEvent) throws Exception {
         String text = detectEditor.getText().replaceAll("\n", System.getProperty("line.separator"));
-        String[] text2 = text.split("\n");
+        String[] code = text.split("\n");
         String smell = smells[smellIndex];
+        String info = "";
 
-        LinkedList<String> result = Detector.detect(text2, smell);
-        detectionInfo.setText("detector: " + smell);
+        LinkedList<String> result = Detector.detect(code, smell);
+
+        System.out.println(result);
+        for (int i=0; i < result.size(); i++) {
+            info = info + "Case " + i + ": " + result.get(i) + "\n";
+        }
+        detectionInfo.setText(info);
     }
 
     public void refactor(ActionEvent actionEvent) {
