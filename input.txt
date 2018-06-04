@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def algo(a,b,c):
 	print(a)
 	return b
@@ -9,3 +10,31 @@ def algo2(x,y,z):
 	return z
 
 algo2(1 ,2 ,  algo2(9,8,7))
+=======
+def a(x, y, z):
+	return x
+def b(w, x, y, z):
+	return z
+def c(x, y, z):
+	return y
+
+
+if True:
+	print("")
+	print("")
+	print("")
+	print("a")
+elif False:
+	print("")
+	print("")
+	print("")
+	print("")
+else:
+	print("")
+	print("")
+	print("")
+	print("")
+
+def method(a, b, c, d, e, f, g, h, i):
+	return a
+>>>>>>> master

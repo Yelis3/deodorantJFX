@@ -34,11 +34,11 @@ public class IndexController {
     public LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
 
     public void detect(ActionEvent actionEvent) throws Exception {
-        String text = detectEditor.getText().replaceAll("\n", System.getProperty("line.separator"));
-        String[] code = text.split("\n");
+        String text = detectEditor.getText().replaceAll("~", System.getProperty("line.separator"));
+        String[] code = text.split("~");
+
         String smell = smells[smellIndex];
         String info = "";
-
         LinkedList<String> result = Detector.detect(code, smell, datos1, datos2, datos3, datos4, datos5);
 
 //        System.out.println(result);
@@ -77,5 +77,6 @@ public class IndexController {
         solutionDescription.setText("Solution: " + solutionDescriptions[smellIndex]);
         solutionWhy.setText("Why refactor: " + solutionWhyDescriptions[smellIndex]);
         solutionWhen.setText("When not to use: " + solutionWhenDescriptions[smellIndex]);
+        detectionInfo.setText("");
     }
 }

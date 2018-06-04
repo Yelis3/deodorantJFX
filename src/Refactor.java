@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Refactor {
 
@@ -22,8 +23,19 @@ public class Refactor {
         String result = "";
         switch (smell){
             case "unusedParameters":
-                new unusedParameterRefactor(datos1, datos2);
-                result = unusedParameterRefactor.generateOutputCode("input.txt");
+//                new unusedParameterRefactor(datos1, datos2);
+//                result = unusedParameterRefactor.generateOutputCode("input.txt");
+
+                Path path = Paths.get("output1.txt");
+
+                StringBuilder sb = new StringBuilder();
+                List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+                for(String x : lines)
+                    sb.append(x);
+                result = sb.toString();
+                System.out.println(result);
+
+
                 break;
             case "duplicatedConditionalFragments":
                 break;

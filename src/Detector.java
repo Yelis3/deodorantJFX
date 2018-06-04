@@ -29,7 +29,12 @@ public class Detector {
 
         String input = "input.txt";
         Path path = Paths.get(input);
-        Files.write(path, Arrays.asList(args), StandardCharsets.UTF_8);
+        LinkedList<String> l = new LinkedList<>();
+        for(String x : args)
+            l.add(x);
+        System.out.println(Arrays.toString(args));
+        System.out.println(l);
+        Files.write(path, l, StandardCharsets.UTF_8);
 
 
 
@@ -86,7 +91,7 @@ public class Detector {
             case "longParameterList":
 
                 //  Long Parameter List Smell
-                //LinkedList<couple<couple<String, Integer>, LinkedList<String> > > Datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
+                //LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
                 int limit = 5;
 
                 longParameterListDetector<Object> loader2 = new longParameterListDetector<Object>(datos5, limit);
@@ -94,7 +99,7 @@ public class Detector {
 
                 result = new LinkedList<String>();
                 for (couple<couple<String, Integer>, LinkedList<String>> x : datos5)
-                    result.add("Demasiados parametros en la función "+x.t1.t1+" de la linea "+x.t1.t2+" estos son: "+x.t2);
+                    result.add("Too many parameters in the method '"+x.t1.t1+"' in the line "+x.t1.t2+", these are: "+x.t2);
                 break;
             default:
                 result.add("Smell no reconocible");
