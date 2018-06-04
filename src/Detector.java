@@ -76,12 +76,12 @@ public class Detector {
                 duplicateConditionalFragmentsDetector.print();
 
                 for (int i = 0; i <datos3.size(); i++) {
-                    result.add("The if statement at the line "+datos3.get(i).t1+" has the same "+datos3.get(i).t2.t1+" lines at the blocks top");
+                    result.add("The if statement at the line "+datos3.get(i).t1+" has the same "+datos3.get(i).t2.t1+" lines at the top of the blocks");
                 }
 
 
                 for (int i = 0; i <datos4.size(); i++) {
-                    result.add("The if statement at the line "+datos4.get(i).t1+" has the same "+datos4.get(i).t2.t1+" lines at the blocks bottom");
+                    result.add("The if statement at the line "+datos4.get(i).t1+" has the same "+datos4.get(i).t2.t1+" lines at the bottom of the blocks");
                 }
 
 
