@@ -37,9 +37,7 @@ public class unusedParameterDetector1<T> extends pythonBaseListener{
 
     @Override
     public void enterAtom(pythonParser.AtomContext ctx) {
-        //System.out.println(ctx.NAME());
         if(ctx.NAME() != null) {
-            //System.out.println("dentro");
             couple<Integer, Boolean> aux = myMap.get(ctx.NAME().toString());
             if(aux != null)
                 myMap.put(ctx.NAME().toString(), new couple<Integer, Boolean>(aux.t1, true));

@@ -41,11 +41,6 @@ public class IndexController {
         String info = "";
         LinkedList<String> result = Detector.detect(code, smell, datos1, datos2, datos3, datos4, datos5);
 
-//        System.out.println(result);
-//        System.out.println(datos1);
-//        for (LinkedList<Integer[]> x : datos2)
-//            for(Integer[] y : x)
-//                System.out.println(Arrays.toString(y));
         for (int i=0; i < result.size(); i++) {
             info = info + "Case " + i + ": " + result.get(i) + "\n";
         }

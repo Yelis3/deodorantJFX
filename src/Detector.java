@@ -32,8 +32,6 @@ public class Detector {
         LinkedList<String> l = new LinkedList<>();
         for(String x : args)
             l.add(x);
-        System.out.println(Arrays.toString(args));
-        System.out.println(l);
         Files.write(path, l, StandardCharsets.UTF_8);
 
 
