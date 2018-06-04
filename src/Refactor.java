@@ -15,7 +15,7 @@ public class Refactor {
 
     public static String refactor(String smell,
                                             LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1,
-                                            LinkedList<Integer[]>[] datos2,
+                                            LinkedList<LinkedList<Integer[]>> datos2,
                                             LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3,
                                             LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4,
                                             LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5) throws Exception{

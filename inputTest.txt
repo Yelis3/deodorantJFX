@@ -9,3 +9,6 @@ def algo2(x,y,z):
 	return z
 
 algo2(1 ,2 ,  algo2(9,8,7))
+
+
+

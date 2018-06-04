@@ -3,13 +3,15 @@ import java.util.LinkedList;
 
 public class unusedParameterDetector2<T> extends pythonBaseVisitor{
     LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1;
-    LinkedList<Integer[]>[] datos2;
+    LinkedList<LinkedList<Integer[]>> datos2;
 
     public unusedParameterDetector2(
             LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> > > > datos1,
-            LinkedList<Integer[]>[] datos2){
+            LinkedList<LinkedList<Integer[]>> datos2){
         this.datos1 = datos1;
         this.datos2 = datos2;
+        for(int i=0; i<datos1.size(); i++)
+            datos2.add(new LinkedList<Integer[]>());
     }
 
     @Override
@@ -21,7 +23,8 @@ public class unusedParameterDetector2<T> extends pythonBaseVisitor{
                     Integer[] aux = new Integer[2];
                     aux[0] = ctx.atom().NAME().getSymbol().getLine();
                     aux[1] = ctx.atom().NAME().getSymbol().getCharPositionInLine();
-                    datos2[i].add(aux);
+                    datos2.get(i).add(aux);
+                    break;
                 }
             }
         }

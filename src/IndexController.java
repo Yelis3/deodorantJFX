@@ -26,11 +26,12 @@ public class IndexController {
     public static final String[] solutionWhenDescriptions = {"If the method is implemented in different ways in subclasses or in a superclass, and your parameter is used in those implementations, leave the parameter as-is.", "It is recommended to use any time you see it doesn't causes troubles in your code.", "Do not get rid of parameters if doing so would cause unwanted dependency between classes."};
 
 
+    public Data data = new Data();
     public LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> > datos1 = new LinkedList<couple<couple<String, Integer>, ArrayList<couple<String, Integer> >> >();
-    public LinkedList<Integer[]>[] datos2;// = new LinkedList<Integer[]>[]()
-    public LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3;// = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
-    public LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4;// = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
-    public LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5;// = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
+    public LinkedList<LinkedList<Integer[]>> datos2 = new LinkedList<LinkedList<Integer[]>>();
+    public LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos3 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+    public LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>> datos4 = new LinkedList<couple<Integer, couple<Integer, LinkedList<Integer>>>>();
+    public LinkedList<couple<couple<String, Integer>, LinkedList<String> > > datos5 = new LinkedList<couple<couple<String, Integer>, LinkedList<String> > >();
 
     public void detect(ActionEvent actionEvent) throws Exception {
         String text = detectEditor.getText().replaceAll("\n", System.getProperty("line.separator"));
@@ -40,9 +41,11 @@ public class IndexController {
 
         LinkedList<String> result = Detector.detect(code, smell, datos1, datos2, datos3, datos4, datos5);
 
-        System.out.println(result);
-        System.out.println(datos1);
-        System.out.println(datos2);
+//        System.out.println(result);
+//        System.out.println(datos1);
+//        for (LinkedList<Integer[]> x : datos2)
+//            for(Integer[] y : x)
+//                System.out.println(Arrays.toString(y));
         for (int i=0; i < result.size(); i++) {
             info = info + "Case " + i + ": " + result.get(i) + "\n";
         }
@@ -51,11 +54,8 @@ public class IndexController {
 
     public void refactor(ActionEvent actionEvent) throws Exception {
         String smell = smells[smellIndex];
-        System.out.println(datos1);
-        System.out.println(datos2);
         String result = Refactor.refactor(smell, datos1, datos2, datos3, datos4, datos5);
-
-        System.out.println(result);
+        refactorEditor.setText(result);
     }
 
     public void prev(ActionEvent actionEvent) {
