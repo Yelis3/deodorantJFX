@@ -1,15 +1,15 @@
-def algo(a,b,c):
+def algo(a,b):
 	print(a)
 	return b
 
 
 
-def algo2(x,y,z):
+def algo2(x,z):
 	print(x)
-	algo(3,4,5)
+	algo(3,4)
 	return z
 
-algo2(1 ,2 ,  algo2(9,8,7))
+algo2(1 ,  algo2(9,7))
 
 
 x = 5
@@ -37,3 +37,4 @@ else:
 
 def myfun(a,b,c,d,e,f):
 	return a + b + c + d + e + f
+

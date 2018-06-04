@@ -64,6 +64,11 @@ public class IndexController {
         if(smellIndex < smells.length-1)
             smellIndex ++;
         setTexts(actionEvent);
+        String line = refactorEditor.getText();
+        if(line.length() != 0){
+        	detectEditor.setText(line);
+        	refactorEditor.setText("");
+        }
     }
 
     public void setTexts(ActionEvent actionEvent) {
