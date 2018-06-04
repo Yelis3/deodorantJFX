@@ -28,6 +28,8 @@ public class Refactor {
 
                 break;
             case "duplicatedConditionalFragments":
+                result = duplicateConditionalFragmentsRefactor.generate("input.txt", datos3, datos4);
+
                 break;
             case "longParameterList":
                 break;

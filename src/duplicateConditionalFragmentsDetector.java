@@ -25,6 +25,7 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
         this.path = Paths.get(input);
         this.lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         this.isInIf = false;
+        this.isInSuite = false;
         this.aux1 = null;
         this.aux2 = null;
         this.datos1 = new LinkedList<couple<Integer, LinkedList<LinkedList<couple<String, Integer>> > > >();;
@@ -41,12 +42,12 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
 
     @Override
     public void exitIf_stmt(pythonParser.If_stmtContext ctx) {
-        for(LinkedList<couple<String, Integer>> x : aux2) {
-            for (couple<String, Integer> y : x)
-                System.out.println(y);
-            System.out.println();
-        }
-        System.out.println();
+//        for(LinkedList<couple<String, Integer>> x : aux2) {
+//            for (couple<String, Integer> y : x)
+//                System.out.println(y);
+//            System.out.println();
+//        }
+//        System.out.println();
         datos1.add(new couple<Integer, LinkedList<LinkedList<couple<String,Integer>>>>(ctx.getStart().getLine(),aux2));
         isInIf = false;
         //super.exitIf_stmt(ctx);
@@ -54,8 +55,8 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
 
     @Override
     public void enterSuite(pythonParser.SuiteContext ctx) {
-        isInSuite = true;
         if(isInIf){
+            isInSuite = true;
             aux1 = new LinkedList<couple<String, Integer>>();
         }
 //        super.enterSuite(ctx);
@@ -67,8 +68,8 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
         if(isInIf) {
             aux1.removeLast();
             aux2.add(aux1);
+            isInSuite = false;
         }
-        isInSuite = false;
 //        super.exitSuite(ctx);
     }
 
@@ -93,7 +94,6 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
 
 
     public static void calculate(){
-        System.out.println("calculare");
         int minInst = Integer.MAX_VALUE;
         //  to up
         for(couple<Integer, LinkedList<LinkedList<couple<String, Integer>> > > x : datos1){
@@ -138,7 +138,6 @@ public class duplicateConditionalFragmentsDetector extends pythonBaseListener{
 
 
             if(equalLines!=0) {
-                System.out.println("equalLines"+equalLines);
                 LinkedList<Integer> arrayll = new LinkedList<Integer>();
                 for (LinkedList<couple<String, Integer>> y : x.t2) {
                     if(equalLines != y.size())

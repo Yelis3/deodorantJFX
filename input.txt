@@ -3,6 +3,7 @@ def algo(a,b,c):
 	return b
 
 
+
 def algo2(x,y,z):
 	print(x)
 	algo(3,4,5)
@@ -11,5 +12,28 @@ def algo2(x,y,z):
 algo2(1 ,2 ,  algo2(9,8,7))
 
 
+x = 5
+if x < 10:
+	print("a")
+	print("b")
+	a = 4
+	print("c")
+	print("d")
+	x = 5
+elif x > 10:
+	print("a")
+	print("b")
+	a = 5
+	print("d")
+	x = 5
+else:
+	print("a")
+	print("b")
+	a = 6
+	a = 10
+	print("c")
+	print("d")
+	x = 5
 
-
+def myfun(a,b,c,d,e,f):
+	return a + b + c + d + e + f
